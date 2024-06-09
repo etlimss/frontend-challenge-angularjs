@@ -1,0 +1,178 @@
+.card {
+  display: grid;
+  place-items: center;
+  width: 13.125rem;
+  overflow: hidden;
+  border-radius: 0.125rem;;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  color: var(--white);
+}
+
+.card > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.card-background {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: flex-end;
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.3) 10%,
+    hsl(0, 0%, 0%) 100%
+  );
+}
+
+.card-title {
+  position: relative;
+  width: fit-content;
+  margin: 0px 0px 1.5rem 1.5rem;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 0.3125rem;
+  width: calc(100% + 1.55rem);
+  bottom: calc((1.25rem - 0.5rem) * -1);
+  left: -1.48rem;
+  background-color: var(--brand-color);
+}
+
+.card-btn--container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-button {
+  cursor: pointer;
+  padding: 0.7em 1em;
+  width: fit-content;
+  font-variant: small-caps;
+  font-weight: bold;
+  border-radius: 0.45em;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--black);
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(110, 74, 252, 1) 0%,
+    rgba(133, 62, 212, 1) 50%,
+    rgba(167, 45, 152, 1) 100%
+  );
+  background-size: 200% 100%;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-button i {
+  font-size: 1rem;
+  opacity: 0;
+  position: absolute;
+  right: 0.5625rem;
+  transform: translateX(100%);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+.card-button:hover {
+  padding-right: 2.5em;
+}
+
+.card-button:hover i {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .card-content {
+    transform: translateY(62%);
+    transition: transform 500ms ease-out;
+    transition-delay: 500ms;
+  }
+
+  .card-title::after {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 1000ms ease-in, transform 500ms ease-out;
+    transition-delay: 500ms;
+    transform-origin: right;
+  }
+
+  .card-background {
+    transition: transform 500ms ease-in;
+  }
+
+  .card-content--container > :not(.card-title),
+  .card-button {
+    opacity: 0;
+    transition: transform 200ms ease-out, opacity 200ms ease-out;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: scale(1.05);
+    transition: transform 500ms ease-in;
+  }
+
+  .card:hover .card-content,
+  .card:focus-within .card-content {
+    transform: translateY(0);
+    transition: transform 500ms ease-in;
+  }
+
+  .card:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+
+  .card:hover .card-background,
+  .card:focus-within .card-background {
+    transform: scale(1.3);
+  }
+
+  .card:hover .card-content--container > :not(.card-title),
+  .card:hover .card-button,
+  .card:focus-within .card-content--container > :not(.card-title),
+  .card:focus-within .card-button {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    transition-delay: 500ms;
+  }
+
+  .card:hover .card-title::after,
+  .card:focus-within .card-title::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition-delay: 500ms;
+  }
+}
+
+@media (min-width: 993px) {
+  .card {
+    width: 14.375rem;
+  }
+}
+
+@media (min-width: 1594px) {
+  .card {
+    width: 15.625rem;
+  }
+}
