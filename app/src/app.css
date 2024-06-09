@@ -1,0 +1,23 @@
+:root {
+  /* Colors */
+  --brand-color: #FC0202;
+  --secondary-color: #6E4AFC;
+  --load-more-btn-hvr: #4b0000;
+  --load-more-btn:#640101;
+  --black: #000;
+  --white: #fff;
+  /* Fonts */
+  --font-title: "Montserrat", sans-serif;
+  --font-text: "Lato", sans-serif;
+}
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  background: #FFF;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+

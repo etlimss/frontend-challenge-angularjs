@@ -25,23 +25,22 @@
 
     // load all of the dependencies asynchronously.
     $script([
-      'app.js',
-      'view1/view1.js',
-      'view2/view2.js'
+      'src/index.js',
+      'src/components/navbar/navbar.js',
+      'src/views/home.js',
+      'src/views/favorites.js'
     ], function() {
       // when all is done, execute bootstrap AngularJS application
       angular.bootstrap(document, ['myApp']);
     });
   </script>
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="app.css">
+  <title>GridPics</title>
+  <link rel="stylesheet" href="src/components/navbar/navbar.css">
+  <link rel="stylesheet" href="src/app.css">
+  <link rel="stylesheet" href="src/views/home.css">
 </head>
 <body ng-cloak>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
-
+  <app-navbar></app-navbar>
   <div ng-view></div>
 </body>
 </html>
