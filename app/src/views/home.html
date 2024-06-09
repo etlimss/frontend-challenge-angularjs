@@ -1,0 +1,50 @@
+<div class="home-container">
+    <div class="search-box">
+        <input type="text" ng-model="searchQuery" placeholder="Search">
+        <button ng-click="search()">
+            <i class="fas fa-search"></i>
+        </button>
+        <button class="clear-btn" ng-show="searchQuery" ng-click="clearSearch()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="api-call-count">
+        Remaining search: {{ apiCallsRemaining }}
+    </div>
+
+    <div  ng-if="noResultsFound" class="no-results-container">
+        <img class="no-results-img" src="../assets/404-error.png" />
+        <span class="no-results-title">Oops! No resaults found for 
+            "<span class="no-results-search">{{lastSearchQuery}}</span>"
+        </span>
+        <span class="no-results-desc">Please check spelling or try different keywords</span>
+    </div>
+
+    <div ng-if="searchResults.length === 0 && !hasSearched" class="filter-grid">
+        <card-component title="Nature" image-url="../assets/nature.jpg" on-click="applyFilter('nature')"></card-component>
+        <card-component title="Technology" image-url="../assets/technology.jpg" on-click="applyFilter('technology')"></card-component>
+        <card-component title="People" image-url="../assets/people.jpg" on-click="applyFilter('people')"></card-component>
+        <card-component title="Food" image-url="../assets/food.jpg" on-click="applyFilter('food')"></card-component>
+        <card-component title="Travel" image-url="../assets/travel.jpg" on-click="applyFilter('travel')"></card-component>
+        <card-component title="Fashion" image-url="../assets/fashion.jpg" on-click="applyFilter('fashion')"></card-component>
+        <card-component title="Architecture" image-url="../assets/architecture.jpg" on-click="applyFilter('architecture')"></card-component>
+        <card-component title="Sports" image-url="../assets/sport.jpg" on-click="applyFilter('sports')"></card-component>
+        <card-component title="Animals" image-url="../assets/animals.jpg" on-click="applyFilter('animals')"></card-component>
+        <card-component title="Art" image-url="../assets/art.jpg" on-click="applyFilter('art')"></card-component>
+    </div>
+   
+    <div class="search-results">
+        <div ng-if="searchResults.length > 0" ng-repeat="item in searchResults" class="grid-item">
+          <div class="image-container">
+            <img ng-src="{{item.urls.small}}" alt="{{item.alt_description}}" loading="lazy">
+            <div class="overlay">
+                <i class="fa-solid fa-heart" ng-class="{'clicked': isFavorite(item)}" ng-click="toggleFavorite(item)"></i>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="load-more" ng-if="searchResults.length > 0 && !allLoaded">
+        <button ng-click="loadMore()">Load More</button>
+    </div>
+</div>
