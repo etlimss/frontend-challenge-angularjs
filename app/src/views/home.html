@@ -8,10 +8,10 @@
             <i class="fas fa-times"></i>
         </button>
     </div>
-    <div class="api-call-count">
+    <!-- Uncomment when testing to see how many api calls are left -->
+    <!-- <div class="api-call-count">
         Remaining search: {{ apiCallsRemaining }}
-    </div>
-
+    </div> -->
     <div  ng-if="noResultsFound" class="no-results-container">
         <img class="no-results-img" src="../assets/404-error.png" />
         <span class="no-results-title">Oops! No resaults found for 
@@ -31,11 +31,17 @@
         <card-component title="Sports" image-url="../assets/sport.jpg" on-click="applyFilter('sports')"></card-component>
         <card-component title="Animals" image-url="../assets/animals.jpg" on-click="applyFilter('animals')"></card-component>
         <card-component title="Art" image-url="../assets/art.jpg" on-click="applyFilter('art')"></card-component>
+        <card-component title="Music" image-url="../assets/music.jpg" on-click="applyFilter('music')"></card-component>
+        <card-component title="Street Photography" image-url="../assets/street.jpg" on-click="applyFilter('street photography')"></card-component>
+        <card-component title="History" image-url="../assets/history.jpg" on-click="applyFilter('history')"></card-component>
+        <card-component title="Space" image-url="../assets/space.jpg" on-click="applyFilter('space')"></card-component>
+        <card-component title="Ocean" image-url="../assets/ocean.jpg" on-click="applyFilter('ocean')"></card-component>
+        <card-component title="Sunset" image-url="../assets/sunset.jpg" on-click="applyFilter('sunset')"></card-component>
     </div>
    
     <div class="search-results">
         <div ng-if="searchResults.length > 0" ng-repeat="item in searchResults" class="grid-item">
-          <div class="image-container">
+          <div class="image-container"> 
             <img ng-src="{{item.urls.small}}" alt="{{item.alt_description}}" loading="lazy">
             <div class="overlay">
                 <i class="fa-solid fa-heart" ng-class="{'clicked': isFavorite(item)}" ng-click="toggleFavorite(item)"></i>

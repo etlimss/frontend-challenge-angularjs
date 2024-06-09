@@ -19,6 +19,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  padding-bottom: 2.5rem;
 }
 
 .search-box input {
@@ -125,8 +126,7 @@
   }
 }
 
-.search-results,
-.favorites-container .search-results {
+.search-results {
   column-count: 2;
   column-gap: 1em;
   width: 100%;
