@@ -1,0 +1,13 @@
+<div class="home-container">
+    <h2>Your Favorites</h2>
+    <div class="search-results">
+      <div ng-repeat="item in favorites" class="grid-item">
+        <div class="image-container">
+          <img ng-src="{{item.urls.small}}" alt="{{item.alt_description}}" loading="lazy">
+          <div class="overlay">
+            <i class="fas fa-heart clicked" ng-click="toggleFavorite(item)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
