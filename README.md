@@ -1,46 +1,39 @@
-# Challenge - Image search (Unsplash API)
+# GridPics
+### Challenge - Image search (Unsplash API)
 
-Using the free [Unsplash API](https://unsplash.com/documentation#search-photos) service, build a view that allows user to search for images (`GET /search/photos`) and display results in a paginated view.
+## Description:
+GridPics is a single page application allowing user to search and save favorite images during their session. 
 
-Find Search endpoint documentation [here](https://unsplash.com/documentation#search-photos).
+### Fetures:
+Branding: Created a brand for a future customer website.
+Search Images: Enter keywords to search for images from the Unsplash API.
+Filter by Categories: Quickly filter images by popular categories such as Nature, Technology, People, and more.
+Favorite Images: Save your favorite images to a favorites list, which persists for the duration of your session.
+Responsive Design: Responsive design across different devices and screen sizes.
+Elegant Animations: Smooth animations enhance the user experience when loading and interacting with the application.
 
-**API credentials will be provided to you by email.**
+## Installation
 
-### Frontend requirements:
-- Input field for search query.
-- Results view that display results in a grid.
-- Results must be displayed using pagination / lazy loading.
-- Any other features that you think is a **MUST** for great search experience, e.g. "No results found" view, sorting and etc.
+1. Clone the repository.
 
-### How to deliver the solution:
-- Clone this project, setup your own GitHub repository and commit your code there.
-- Make sure to include a README file with instructions on how to run the app.
-- If it's a private repository, please add me as a collaborator (username: `gorilazish`).
-
-> ### Notes
-> - Free tier of Unsplash API has a rate limit of 50 requests per hour. You might want to save some mock responses while developing/testing.
-> - It is up to you whether you want to put more focus on adding extensive list of features or making the app look and feel good with minimal functionality.
-> - You can use any libraries or tools.
-> - **We do not expect you to spend more than 8 hours on this task.**
-> - Be prepared to explain your code and design decisions.
-
-
-
-## Getting Started
-
-This project contains very basic setup of an AngularJS app for implementing frontend challenges.
-
-To get you started simply clone the repository and install the dependencies:
-
+2. Install needed dependencies:
 ```
 npm install
 ```
 
-Start the local development environment: 
+3. Build: 
+```
+npm run build
+```
 
+4. And start the project
 ```
 npm start
 ```
 
+Once started navigate to the app at [`http://localhost:8080`](http://localhost:8080).
 
-Once started navigate to the app at [`http://localhost:8000`](http://localhost:8000).
+If in any case you need to clean the project run, use:
+```
+npm clean run
+```
