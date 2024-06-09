@@ -37,5 +37,5 @@ Once started navigate to the app at [`http://localhost:8080`](http://localhost:8
 5. If in any case you need to clean the project, run:
 > **(optional)**
 ```
-npm clean run
+npm run clean
 ```
