@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="navbar-logo">
+      <a href="#!/home">
+        <img src="assets/logo.svg" alt="Logo">
+      </a>
+    </div>
+    <div class="navbar-links">
+      <a href="#!/home" ng-class="{active: isActive('/home')}">Home</a>
+      <a href="#!/favorites" ng-class="{active: isActive('/favorites')}">
+        <a href="#!/favorites">
+          <i class="fas fa-heart"></i>
+        </a>
+      </a>
+    </div>
+</nav>

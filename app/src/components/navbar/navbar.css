@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 6rem;  
+    margin-left: 2rem;
+  }
+
+  .navbar-links a {
+    color: #E74646;
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 0rem 3rem 0rem -1rem;
+  }
+  
+  .navbar-links a.active {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .fa-heart {
+    font-size: 1.5rem;
+    color: red;
+  }
+
+  a .favorite-count {
+    position: absolute;
+    top: -0.625rem;
+    right: -0.625rem;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+  }
+  
