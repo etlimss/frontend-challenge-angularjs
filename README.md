@@ -16,17 +16,22 @@ GridPics is a single page application allowing user to search and save favorite 
 
 1. Clone the repository.
 
-2. Install needed dependencies:
+2. Create a .env file in the root directory of the project and add your Unsplash API key:
+```
+UNSPLASH_API_KEY=your_unsplash_api_key
+```
+
+3. Install needed dependencies:
 ```
 npm install
 ```
 
-3. Build: 
+4. Build: 
 ```
 npm run build
 ```
 
-4. And start the project
+5. And start the project
 ```
 npm start
 ```
